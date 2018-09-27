@@ -9,11 +9,8 @@ public class Kata2 {
         Map<Integer ,Integer> histogram = new HashMap<>();
         for (int i = 0; i < data.length; i++) {
             int e = data[i];
-            if(histogram.containsKey(e)==true){
-                histogram.put(data[i], histogram.get(data[i])+1);
-            }else{
-                histogram.put(data[i], 1);
-            }                      
+            histogram.put(e, histogram.containsKey(e)?histogram.get(e) + 1 : 1);
+                     
         }
         
         histogram.keySet().stream().forEach((key) -> {
